@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PriceProof — Black Friday Deal Finder</title>
+  <meta name="description" content="45 real Black Friday and Cyber Monday deals, each checked on 27 Nov 2026 at its store or in a deals source that names the store — with an honest verdict on whether it is really a deal.">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <h1>Price<span>Proof</span> — Black Friday Deal Finder</h1>
+      <p class="tagline">Real deals, checked today. No inflated “was” prices, no invented listings — every price was read at its store or in a deals source that names the store.</p>
+      <p><span class="checked">All prices read on Black Friday, 27 Nov 2026</span></p>
+      <ul class="stats">
+        <li><strong>45</strong> deals</li>
+        <li><strong>11</strong> categories</li>
+        <li><strong>5</strong> stores</li>
+        <li><strong>$7,482</strong> total savings</li>
+        <li><strong>7</strong> new all-time lows</li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="best" aria-labelledby="best-heading">
+      <h2 id="best-heading">Best of the day</h2>
+      <p class="lede">The six strongest verified cuts — new lows first, then the deepest discounts.</p>
+      <div class="best-strip" id="best-strip"></div>
+    </section>
+
+    <section class="finder" aria-labelledby="finder-heading">
+      <h2 id="finder-heading" style="margin-top: 30px;">Find your deal</h2>
+      <p class="lede">Search, filter by category, store and discount, or sort by the biggest saving.</p>
+
+      <div class="controls">
+        <div class="controls-row">
+          <label for="search">Search</label>
+          <input id="search" type="search" placeholder="Try “Dyson”, “LEGO” or “AirPods”…">
+        </div>
+        <div class="controls-row">
+          <label>Category</label>
+          <div id="category-chips" class="chips"></div>
+        </div>
+        <div class="controls-row">
+          <label>Store</label>
+          <div id="store-chips" class="chips"></div>
+        </div>
+        <div class="controls-row">
+          <label>At least</label>
+          <div id="discount-chips" class="chips"></div>
+          <span>% off</span>
+        </div>
+        <div class="controls-row">
+          <label for="verdict">Verdict</label>
+          <select id="verdict">
+            <option value="All">Any verdict</option>
+            <option value="new-low">New low</option>
+            <option value="strong">Strong deal</option>
+            <option value="solid">Solid deal</option>
+            <option value="routine">Routine sale</option>
+          </select>
+          <label for="sort">Sort by</label>
+          <select id="sort">
+            <option value="discount">Biggest % off</option>
+            <option value="verdict">Best verdict first</option>
+            <option value="saved">Most dollars saved</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+          </select>
+          <button id="clear-filters" type="button">Clear filters</button>
+        </div>
+      </div>
+
+      <p id="count-line" aria-live="polite"></p>
+      <div class="grid" id="deals"></div>
+    </section>
+
+    <footer>
+      <h2>How these deals were checked</h2>
+      <p>Each price on this page was read on 27 Nov 2026 at the store named on the deal, or in a deals source that names the store — Popular Science, 9to5Toys, 9to5Google, Tom’s Guide, Slickdeals, 2nd Shift, FullCleared, WalletHub, Koupon and the Black Friday diary. The source and its date are printed on every deal, and the link opens it. Discounts are computed from the sale price and the usual price the same source showed, so the maths always adds up.</p>
+      <p>Every deal carries an honest verdict: <strong>New low</strong> means the lowest price ever recorded for that product; <strong>Strong deal</strong> is a deep cut on a well-known product; <strong>Solid deal</strong> is a genuine saving; <strong>Routine sale</strong> is a small cut — fine if you need it now, not a bargain to chase. Where the same product is cheaper at another store, the card says so.</p>
+      <p>Prices move all day on Black Friday. Check the price at checkout before you buy. PriceProof is an independent deal finder built for make.fun’s Black Friday deal finder bounty — it is not affiliated with Amazon, Best Buy, Walmart, Costco or GameStop.</p>
+    </footer>
+  </main>
+
+  <dialog id="deal-dialog" aria-label="Deal detail"></dialog>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
