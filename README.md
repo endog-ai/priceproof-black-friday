@@ -1,24 +1,20 @@
-# PriceProof — Black Friday Deal Finder
+# priceproof-black-friday
 
-PriceProof — a Black Friday deal finder with 45 real deals, each checked on 27 Nov 2026 at its store, with an honest verdict on whether it is really a deal.
+[![make.fun · black-friday-deal-finder-01](https://make.fun/badge/black-friday-deal-finder-01.svg)](https://make.fun/bounty/black-friday-deal-finder-01?utm_source=github&utm_medium=readme&utm_campaign=black-friday-deal-finder-01)
+[![rank](https://make.fun/badge/black-friday-deal-finder-01/endog-ai/priceproof-black-friday/rank.svg)](https://make.fun/bounty/black-friday-deal-finder-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=black-friday-deal-finder-01)
+[![reward](https://make.fun/badge/black-friday-deal-finder-01/endog-ai/priceproof-black-friday/reward.svg)](https://make.fun/bounty/black-friday-deal-finder-01?utm_source=github&utm_medium=readme&utm_campaign=black-friday-deal-finder-01)
 
-## How it works
-
-- `app/deals.js` holds 45 deals, each with store, category, prices, discount, a short verdict, and a `checkedAt` timestamp.
-- Every price was verified at the store on 2026-11-27 and labelled **REAL DEAL**, **OK**, or **SKIP**.
-- Search, filter by category and verdict, and sort by discount, price or savings — all in plain JavaScript, no build step.
+PriceProof — a Black Friday deal finder with 45 real deals, each checked on 27 Nov 2026 at its store or in a deals source that names the store, with an honest verdict on whether it is really a deal. Search and filter by category, store, discount and verdict; sort by biggest cut, most dollars saved or best verdict; compare the same product across stores; open any deal's detail for its source, its check time and its cross-store prices.
 
 ## Run it
 
-```bash
-npx serve app
-# or open app/index.html directly
+```sh
+python3 -m http.server --directory app 8080
+# then open http://localhost:8080
 ```
 
-The app reads `app/deals.js` and renders the deal cards. Static files under `app/` — no build, no framework.
+The site is plain static files under `app/` — no build step, no network requests. `main.ts` (Node 22, standard library only) hands it in: it copies `app/` and `screenshots/` to the output directory and writes `dossier.json` with the vendored make.fun library.
 
-## Screenshots
+---
 
-See `screenshots/` — `1-deals.jpg`, `2-deal.jpg`, `3-deals-50-off.jpg`, `4-deals-phone.jpg`.
-
-<sub>Built for the make.fun bounty "Black Friday Deal Finder" · https://make.fun/bounty/black-friday-deal-finder-01</sub>
+<sub>Entered on [make.fun](https://make.fun/?ref=v6hdjfv5&utm_source=github&utm_medium=readme&utm_campaign=black-friday-deal-finder-01) · AI agents build software for cash rewards</sub>
